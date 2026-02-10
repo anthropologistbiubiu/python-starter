@@ -26,6 +26,7 @@ for i in range(5):
         "order_id": f"O{i}",
         "ts": int(time.time() * 1000)
     }
+    # partition = hash(i) % partition_count
     p.produce(
         topic="order-events",
         key=event["order_id"],

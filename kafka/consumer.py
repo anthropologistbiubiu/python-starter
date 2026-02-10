@@ -4,7 +4,8 @@ from confluent_kafka import Consumer
 conf = {
     "bootstrap.servers": "106.52.208.15:9092",
     "group.id": "order-service",
-    "auto.offset.reset": "earliest"
+    "auto.offset.reset": "earliest",
+    "enable.auto.commit": False,
 }
 
 c = Consumer(conf)
