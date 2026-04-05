@@ -28,7 +28,6 @@ def get_document(doc_id: str):
 
 
 def search_documents(keyword: str | None = None, status: str | None = None):
-    """
     must = []
     filters = []
 
@@ -50,6 +49,4 @@ def search_documents(keyword: str | None = None, status: str | None = None):
         "sort": [{"created_at": {"order": "desc"}}],
     }
 
-    return order_repo().search(body=body)
-
-    """
+    return order_repo.search(body=body)

@@ -8,7 +8,7 @@ from app.services.order_service import (
     refresh_index,
     add_document,
     get_document,
-    # search_documents,
+    search_documents,
 )
 
 router = APIRouter(prefix="/es/order", tags=["es-order"])
@@ -46,4 +46,4 @@ def api_get_document(doc_id: str):
 
 @router.get("/search")
 def api_search_documents(keyword: str | None = None, status: str | None = None):
-    pass
+    return search_documents(keyword, status)
