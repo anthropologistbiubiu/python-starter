@@ -1,6 +1,7 @@
 # app/api/es_demo.py
 from fastapi import APIRouter
 from app.schemas.order_schema import OrderDoc
+
 from app.services.order_service import (
     create_index,
     delete_index,
@@ -11,6 +12,11 @@ from app.services.order_service import (
 )
 
 router = APIRouter(prefix="/es/order", tags=["es-order"])
+
+
+@router.get("/ping")
+def api_order_router_ping():
+    return {"message": "pong"}
 
 
 @router.post("/index")
@@ -40,5 +46,4 @@ def api_get_document(doc_id: str):
 
 @router.get("/search")
 def api_search_documents(keyword: str | None = None, status: str | None = None):
-    # return search_documents(keyword=keyword, status=status)
     pass

@@ -1,9 +1,11 @@
 from fastapi import FastAPI
 from app.client.es_client import get_es_client
+from app.api.order_api import router as router
 
 
 def create_app() -> FastAPI:
     app = FastAPI()
+    app.include_router(router=router)
 
     @app.get("/health")
     def health():

@@ -20,11 +20,11 @@ def refresh_index():
 
 
 def add_document(doc_id: str, body: dict):
-    return order_repo.add_order(id=doc_id, document=body)
+    return order_repo.add_order(order_id=doc_id, order_data=body)
 
 
 def get_document(doc_id: str):
-    return order_repo.get_order(id=doc_id)
+    return order_repo.get_order(order_id=doc_id)
 
 
 def search_documents(keyword: str | None = None, status: str | None = None):

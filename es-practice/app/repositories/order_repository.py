@@ -33,4 +33,4 @@ class OrderRepository(BaseRepository):
         return self.index_doc(order_id, order_data)
 
     def get_order(self, order_id: str) -> dict:
-        return self.get_doc(order_id)
+        return self.get_doc(doc_id=order_id)
