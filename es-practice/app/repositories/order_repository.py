@@ -1,4 +1,5 @@
 from app.repositories.base_repository import BaseRepository
+from app.config.settings import settings
 
 ORDER_INDEX = {
     "settings": {"number_of_shards": 1, "number_of_replicas": 0},
@@ -21,7 +22,7 @@ ORDER_INDEX = {
 
 class OrderRepository(BaseRepository):
     def __init__(self):
-        super().__init__(ORDER_INDEX)
+        super().__init__(settings.ORDER_INDEX)
 
     def create_order_index(self, order_index):
         return self.create_index(order_index)
